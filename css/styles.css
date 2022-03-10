@@ -35,9 +35,13 @@
   background-image: url(/images/header-image.jpg);
 }
 
-.row {
-  height: 100%;
+
+.wrapper2 {
+  width: 100%;
+  height: 839px;
+  background-image: url(/images/header-image.jpg);
 }
+
 .home-main-content {
     top: 20%;
     height: 218px;

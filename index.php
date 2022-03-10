@@ -29,7 +29,13 @@
                 </div>
             </div>
             <div class="promoties">
-                <div class="box"></div>
+                <div class="box">
+                    <form action="">
+                        <p>voornaam</p>
+                        <input type="text" name="voornaam" placeholder="Voornaam...">
+                        <input type="submit">
+                    </form>
+                </div>
                 <div class="box"></div>
             </div>
         </div>
