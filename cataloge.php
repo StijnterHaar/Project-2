@@ -19,7 +19,7 @@
                 <a class="catolag-list-items" onclick="openForm()">Login</a>
             </ul>
             <ul class="catalog-list">
-                <a href=index.php class="catolag-list-items">Home</a>
+                <a href=index.html class="catolag-list-items">Home</a>
                 <a class="catolag-list-items active">Pizza</a>
                 <a class="catolag-list-items">Specials</a>
                 <a class="catolag-list-items">Info</a>
@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    <script src="scripts.js"></script>
+    <script src="scripts/login.js"></script>
 
 </body>
 
