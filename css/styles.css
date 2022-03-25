@@ -155,7 +155,7 @@
 .box {
   width: 500px;
   height: 100%;
-  background-color: red;
+  background-color: #e74c3c;
   border-radius: 5%;
 }
 
@@ -192,6 +192,7 @@
 }
 
 .catolag-list-items {
+  cursor: pointer;
   font-size: 20px;
   padding: 16px;
   float: left;
@@ -253,7 +254,7 @@
   margin-left: 20px;
   width: 30px;
   height: 30px;
-  background-color: #c8102e;
+  background-color: #e74c3c;
 }
 .shopping-card {
   margin-top: 120px;
@@ -284,7 +285,7 @@
 }
 
 .active {
-  border-bottom: 3px solid #c8102e;
+  border-bottom: 3px solid #e74c3c;
 }
 
 .form-popup {
@@ -292,10 +293,10 @@
 }
 
 .login-box {
-  border-color: #c8102e;
+  border-color: #e74c3c;
   border-style: solid;
-  border-width: 3px;
-  border-radius: 5px;
+  border-width: 2px;
+  border-radius: 2px;
   padding: 20px;
   z-index: 2000;
   width: 280px;
@@ -310,7 +311,7 @@
 .login-box h1 {
   float: left;
   font-size: 40px;
-  border-bottom: 4px solid #c8102e;
+  border-bottom: 4px solid #e74c3c;
   margin-bottom: 50px;
   padding: 13px;
 }
@@ -321,7 +322,7 @@
   font-size: 20px;
   padding: 8px 0;
   margin: 8px 0;
-  border-bottom: 1px solid #c8102e;
+  border-bottom: 1px solid #e74c3c;
 }
 
 .fa {
@@ -343,7 +344,7 @@
   width: 100%;
   padding: 8px;
   color: #ffffff;
-  background: none #c8102e;
+  background: none #e74c3c;
   border: none;
   border-radius: 6px;
   font-size: 18px;
@@ -354,17 +355,23 @@
 /* Admin Page */
 
 .leftbar {
+  border-radius: 2%;
   position: absolute;
-  width: 75px;
-  height: 700px;
-  top: 0%;
-  left: 0%;
-  background-color: gray;
-  display: flex;
-  justify-content: center;
+  width: 160px;
+  height: 600px;
+  top: 1%;
+  left: 1%;
+  background-image: linear-gradient(rgb(102, 101, 101), rgb(63, 63, 63));
+}
+
+.line {
+  width: auto;
+  height: 1px;
+  background-color: white;
 }
 
 .leftitems {
+  justify-content: center;
   display: block;
   margin: 10px;
   height: 80%;
@@ -377,15 +384,52 @@
 
 .rightbar {
   width: 100%;
-  height: 700px;
-  background-color: green;
+  height: auto;
+  background-color: #e4e2e2;
   display: block;
 }
 
 .topbar {
+  position: relative;
+  top: 5%;
   width: 80%;
-  height: 100px;
-  background-color: #c8102e;
-  margin-top: 50px;
+  height: auto;
   margin-left: 200px;
+  display: flex;
+}
+
+.topbar .box2 {
+  border-radius: 2%;
+  background-color: #f8f8f8;
+  width: 230px;
+  height: 170px;
+  margin: 10px;
+  clip-path: polygon(0% 0%, 120% 0%, 120% 120%, 0% 120%);
+}
+
+.middlecontainer {
+  margin-left: 210px;
+  display: flex;
+  width: auto;
+  height: 500px;
+  margin-top: 10px;
+}
+
+.middlebar1 {
+  display: flex;
+  width: 600px;
+  height: 400px;
+  margin-top: 30px;
+  background-color: #f8f8f8;
+  border-radius: 1%;
+}
+
+.middlebar2 {
+  margin-left: 30px;
+  display: block;
+  width: 350px;
+  height: 400px;
+  margin-top: 30px;
+  background-color: #f8f8f8;
+  border-radius: 1%;
 }
