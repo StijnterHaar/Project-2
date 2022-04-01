@@ -1,6 +1,6 @@
 <?php
 
-@include 'cartconfig.php';
+@include 'includes/connect.php';
 
 $id = $_GET['edit'];
 
@@ -56,8 +56,11 @@ if(isset($_POST['update_product'])){
 
    <?php
       
-      $select = mysqli_query($conn, "SELECT * FROM products WHERE id = '$id'");
-      while($row = mysqli_fetch_assoc($select)){
+      $select = "SELECT * FROM products WHERE id = :id";
+      $stmt = $connect->prepare($select);
+      $stmt->bindParam('id', $_POST['id']);
+      $stmt->execute();
+      $result = $stmt->fetch();
 
    ?>
    
@@ -72,7 +75,7 @@ if(isset($_POST['update_product'])){
    
 
 
-   <?php }; ?>
+   <?php?>
 
    
 

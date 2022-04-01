@@ -4,8 +4,9 @@ include 'includes/connect.php';
 
 if(isset($_GET['delete'])){
    $id = $_GET['delete'];
-   mysqli_query($connect, "DELETE FROM products WHERE id = $id");
+   $remove = "SELECT * FROM products WHERE id = :id";
    header('location:adminpage.php');
+   exit();
 };
 
 ?>
@@ -60,7 +61,10 @@ if(isset($_GET['delete'])){
             <div class="middlebar2">
                 <?php
 
-   $select = mysqli_query($connect, "SELECT * FROM products");
+            $sql = "SELECT * FROM products";
+            $stmt = $connect->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
    
    ?>
                 <div class="product-display">
@@ -73,19 +77,19 @@ if(isset($_GET['delete'])){
                                 <th>actie</th>
                             </tr>
                         </thead>
-                        <?php while($row = mysqli_fetch_assoc($select)){ ?>
+                        <?php foreach($result as $product){ ?>
                         <tr>
-                            <td><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
+                            <td><img src="uploaded_img/<?php echo $product['image']; ?>" height="100" alt=""></td>
                             <td>
-                                <?php echo $row['name']; ?>
+                                <?php echo $product['name']; ?>
                             </td>
                             <td>$
-                                <?php echo $row['price']; ?>/-
+                                <?php echo $product['price']; ?>/-
                             </td>
                             <td>
-                                <a href="admin_update.php?edit=<?php echo $row['id']; ?>" class="btn"> <i
+                                <a href="admin_update.php?edit=<?php echo $product['id']; ?>" class="btn"> <i
                                         class="fas fa-edit"></i> bewerk </a>
-                                <a href="adminpage.php?delete=<?php echo $row['id']; ?>" class="btn"> <i
+                                <a href="php/deletepage.php?delete=<?php echo $product['id']; ?>" class="btn"> <i
                                         class="fas fa-trash"></i> verwijder </a>
                             </td>
                         </tr>

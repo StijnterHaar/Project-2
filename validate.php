@@ -1,6 +1,6 @@
 <?php
   
-include_once('connection.php');
+include_once('includes/connect.php');
    
 function test_input($data) {
       
@@ -14,22 +14,22 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
       
     $adminname = test_input($_POST["adminname"]);
     $password = test_input($_POST["password"]);
-    $stmt = $conn->prepare("SELECT * FROM adminlogin");
+    $stmt = $connect->prepare("SELECT * FROM adminlogin WHERE adminname = :adminname");
+    $stmt->bindParam(':adminname', $adminname);
     $stmt->execute();
-    $users = $stmt->fetchAll();
-      
-    foreach($users as $user) {
-          
-        if(($user['adminname'] == $adminname) && 
-            ($user['password'] == $password)) {
-                header("Location: adminpage.php");
-        }
-        else {
-            echo "<script language='javascript'>";
-            echo "alert('WRONG INFORMATION')";
-            echo "</script>";
-            die();
-        }
+    $user = $stmt->fetch();
+
+    
+    if($user['adminname'] == $adminname && 
+        $user['password'] == $password) {
+            header("Location: adminpage.php");
+            exit();
+    }
+    else {
+        echo "<script language='javascript'>";
+        echo "alert('WRONG INFORMATION')";
+        echo "</script>";
+        die();
     }
 }
   

@@ -433,3 +433,17 @@
   background-color: #f8f8f8;
   border-radius: 1%;
 }
+
+.product-display .product-display-table {
+  width: 100%;
+  text-align: center;
+}
+
+.product-display {
+  overflow-y: scroll;
+  height: 400px;
+}
+
+.product-display .product-display-table a {
+  width: 100px;
+}
