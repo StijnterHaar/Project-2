@@ -1,13 +1,13 @@
 <?php
 
 include 'includes/connect.php';
-
-if(isset($_GET['delete'])){
-   $id = $_GET['delete'];
-   $remove = "SELECT * FROM products WHERE id = :id";
-   header('location:adminpage.php');
-   exit();
-};
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
 
 ?>
 
@@ -56,7 +56,7 @@ if(isset($_GET['delete'])){
                     <input type="number" placeholder="enter product price" name="product_price" class="" required>
                     <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" class="" required>
                     <input type="submit" class="btn" name="add_product" value="add product">
-                </form>>
+                </form>
             </div>
             <div class="middlebar2">
                 <?php
@@ -79,7 +79,7 @@ if(isset($_GET['delete'])){
                         </thead>
                         <?php foreach($result as $product){ ?>
                         <tr>
-                            <td><img src="uploaded_img/<?php echo $product['image']; ?>" height="100" alt=""></td>
+                            <td><img src="uploaded_img/<?php echo $product['image']; ?>" height="50" alt=""></td>
                             <td>
                                 <?php echo $product['name']; ?>
                             </td>

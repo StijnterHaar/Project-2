@@ -20,9 +20,9 @@
             </ul>
             <ul class="catalog-list">
                 <a href=index.php class="catolag-list-items">Home</a>
-                <a href=cataloge.php class="catolag-list-items active">Pizza</a>
+                <a href="cataloge.php" class="catolag-list-items">Pizza</a>
                 <a class="catolag-list-items">Specials</a>
-                <a href=info.php class="catolag-list-items">Info</a>
+                <a href="info.php" class="catolag-list-items active" >Info</a>
 
             </ul>
             <div class="logo">
@@ -52,29 +52,9 @@
     </div>
     <div class="middle-container2">
         <div class="left">
-            <div class="product-items">
-                <?php 
-                @include 'includes/connect.php';
-                 $select = "SELECT * FROM products";
-                 $stmt = $connect->prepare($select);
-                 $stmt->execute();
-                 $result = $stmt->fetchAll();
-
-                 foreach ($result as $product){
-           ?>
-                
-                <div class="product-box">
-                    <div class="display-box"><img src="uploaded_img/<?php echo $product['image']; ?>" height="100" alt="100"></div>
-                    <div class="display-name"><?php echo $product['name']; ?></div>
-                    <div class="footer-box">
-                        <div class="display-price">Vanaf <a style="font-weight: bold;"><?php echo $product['price']; ?> €</a></div>
-                        <div class="display-button">+</div>
-                    </div>
-                </div>
-                <?php
-                }
-                ?>
-            </div>
+        <div class="product-items">
+            Welkom bij onze website!
+        </div>
         </div>
         <div class="right">
             <div class="right-fixed">

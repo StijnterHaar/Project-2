@@ -16,10 +16,11 @@ if(isset($_POST['update_product'])){
       $message[] = 'please fill out all!';    
    }else{
 
-      $update_data = "UPDATE products SET name='$product_name', price='$product_price', image='$product_image'  WHERE id = '$id'";
-      $upload = mysqli_query($conn, $update_data);
+      $sql = "UPDATE products SET name='$product_name', price='$product_price', image='$product_image'  WHERE id = '$id'";
+      $stmt = $connect->prepare($sql);
+      $stmt->execute();
 
-      if($upload){
+      if($stmt){
          move_uploaded_file($product_image_tmp_name, $product_image_folder);
          header('location:adminpage.php');
       }else{
@@ -62,11 +63,12 @@ if(isset($_POST['update_product'])){
       $stmt->execute();
       $result = $stmt->fetch();
 
+
    ?>
    
    <form action="" method="post" enctype="multipart/form-data">
       <h3 class="title">update the product</h3>
-      <input type="text" class="box" name="product_name" value="<?php echo $row['name']; ?>" placeholder="enter the product name">
+      <input type="text" class="box" name="product_name" placeholder="enter the product name">
       <input type="number" min="0" class="box" name="product_price" value="<?php echo $row['price']; ?>" placeholder="enter the product price">
       <input type="file" class="box" name="product_image"  accept="image/png, image/jpeg, image/jpg">
       <input type="submit" value="update product" name="update_product" class="btn">

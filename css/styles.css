@@ -36,6 +36,7 @@
   height: 100%;
   width: 100%;
   object-fit: contain;
+  margin-top: 10px;
 }
 
 .wrapper {
@@ -220,6 +221,9 @@
 }
 
 .display-box {
+  justify-content: center;
+  align-items: center;
+  display: flex;
   background-color: gray;
   height: 140px;
   width: auto;
