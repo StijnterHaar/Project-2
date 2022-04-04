@@ -53,7 +53,17 @@
     <div class="middle-container2">
         <div class="left">
         <div class="product-items">
-            Welkom bij onze website!
+           <h1> Welkom bij onze website! </h1>
+
+            <a>Deze website is opgericht door aanleiding van een project op ROC nijmegen voor de opleiding software developer.</a>
+            <a>Hierbij zijn de volgende dingen aan gewerkt of nog in development :</a>
+            
+            <ul>
+                <li>Hoofd pagina : Finished</li>
+                <li>Hoofd pagina : Finished</li>
+                <li>Hoofd pagina : Finished</li>
+                <li>Hoofd pagina : Finished</li>
+            </ul>
         </div>
         </div>
         <div class="right">

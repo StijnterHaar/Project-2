@@ -154,6 +154,7 @@
 }
 
 .box {
+  display: block;
   width: 500px;
   height: 100%;
   background-color: #e74c3c;
@@ -409,6 +410,17 @@
   height: 170px;
   margin: 10px;
   clip-path: polygon(0% 0%, 120% 0%, 120% 120%, 0% 120%);
+}
+
+.boxh {
+  border-radius: 2%;
+  width: 100%;
+  height: 130px;
+}
+
+.boxd {
+  margin-left: 20px;
+  margin-top: 5px;
 }
 
 .middlecontainer {
