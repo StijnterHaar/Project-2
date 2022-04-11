@@ -1,5 +1,8 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+    
 
 <head>
     <meta charset="UTF-8">
@@ -15,19 +18,24 @@
 <body>
     <div class="top-header2">
         <div class="catalog-nav">
-            <ul class="Login-list">
-                <a class="catolag-list-items" onclick="openForm()">Login</a>
-            </ul>
-            <ul class="catalog-list">
-                <a href=index.php class="catolag-list-items">Home</a>
-                <a href=cataloge.php class="catolag-list-items active">Pizza</a>
-                <a class="catolag-list-items">Specials</a>
-                <a href=info.php class="catolag-list-items">Info</a>
-
-            </ul>
             <div class="logo">
                 <div class="p-header__logo"><img src="images/logo.png"></div>
             </div>
+            <ul class="catalog-list">
+                <a href=index.php class="catolag-list-items">Home</a>
+                <a href=cataloge.php class="catolag-list-items active" style="font-weight: bold;">Pizza</a>
+                <a class="catolag-list-items">Specials</a>
+                <a href=info.php class="catolag-list-items">Info</a>
+            </ul>
+            <ul class="Login-list">
+                            <?php
+                include('validate.php'); // Includes Login Script
+                if(isset($_SESSION['login_user']))
+                echo "<a href='adminpage.php' style='color:white; padding-top: 15px; font-size: 15px;'>","Ingelogd als:  " . $_SESSION['login_user'] . "</a>";
+            else
+                echo '<a class="catolag-list-items" onclick="openForm()">Login</a>';
+                ?> 
+            </ul>
         </div>
     </div>
     <div class="form-popup" id="myForm">
@@ -68,6 +76,7 @@
                     <div class="display-name"><?php echo $product['name']; ?></div>
                     <div class="footer-box">
                         <div class="display-price">Vanaf <a style="font-weight: bold;"><?php echo $product['price']; ?> €</a></div>
+                        
                         <div class="display-button">+</div>
                     </div>
                 </div>
@@ -93,5 +102,17 @@
     <script src="scripts/login.js"></script>
 
 </body>
+
+<footer>
+    <div class="footer-middle">
+        <ul class="footer-ul">
+            <a href="info.php#contact">Contact</a>
+            <a href="info.php">Info</li>
+            <a>Privacy policy</a>
+            <a>Algemene voorwaarden</a>
+        </ul>
+        <div class="credits">© 2022 Stijn ter Haar</div>
+    </div>
+</footer>
 
 </html>

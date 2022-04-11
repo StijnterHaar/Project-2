@@ -2,6 +2,10 @@
 
 include 'includes/connect.php';
 session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+} else {
+    header("Location:cataloge.php");
+}
  
 // Check if the user is logged in, if not then redirect him to login pag
 ?>
@@ -35,6 +39,9 @@ session_start();
                     style="background-color: #db2068; box-shadow: -0.55rem 0 0 #db2068, 3.35rem 0 0 #db2068; padding: .18em 0;"><a
                         style="color: white; margin-left: 5px;">Dashboard</a></i>
                 <i class="fa-solid fa-cart-flatbed"><a style="color: white; margin-left: 5px;">Products</a></i>
+
+                <i class="fa-solid fa-lock-open" style="margin-top: 400px;"><a style="color: white; margin-left: 5px;"
+                        href="php/logout.php">logout</a></i>
             </div>
         </div>
         <div class="topbar">
@@ -49,11 +56,13 @@ session_start();
         <div class="middlecontainer">
             <div class="middlebar1">
                 <form action="php/createProduct.php" method="post" enctype="multipart/form-data">
-                    <h3>add a new product</h3>
-                    <input type="text" placeholder="enter product name" name="product_name" class="" required>
-                    <input type="number" placeholder="enter product price" name="product_price" class="" required>
-                    <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" class="" required>
-                    <input type="submit" class="btn" name="add_product" value="add product">
+                    <div class="adminbox">
+                    <h3 style="margin-top: 20px;">add a new product</h3>
+                    <input type="text" placeholder="enter product name" name="product_name" class="product-name" required>
+                    <input type="number" placeholder="enter product price" name="product_price" class="product-price" required>
+                    <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" class="product-image" required>
+                    <input type="submit" class="submitbtn" name="add_product" value="add product">
+                    </div>
                 </form>
             </div>
             <div class="middlebar2">

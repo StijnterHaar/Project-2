@@ -17,17 +17,18 @@
 }
 
 .top-header2 {
+  border-bottom: 3px solid #e74c3c;
   height: 52px;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   position: fixed;
-  z-index: 299;
-  border-bottom: none;
-  background-color: white;
+  z-index: 250;
+  background-color: #545252;
 }
 
 .logo {
+  z-index: 300;
   width: 100px;
   height: 100px;
 }
@@ -37,6 +38,7 @@
   width: 100%;
   object-fit: contain;
   margin-top: 10px;
+  z-index: 300;
 }
 
 .wrapper {
@@ -102,7 +104,6 @@
 }
 
 .right-fixed {
-  background-color: rgb(230, 227, 227);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -173,14 +174,15 @@
 .catalog-nav {
   width: 100%;
   height: 60px;
+  display: flex;
 }
 
 .catalog-list {
   display: inline;
   list-style-type: none;
   width: auto;
-  position: fixed;
-  left: 38%;
+  height: auto;
+  margin-left: 300px;
   z-index: 299;
 }
 
@@ -188,8 +190,7 @@
   display: inline;
   list-style-type: none;
   width: auto;
-  position: fixed;
-  right: 5%;
+  margin-left: 250px;
   z-index: 299;
 }
 
@@ -199,7 +200,7 @@
   padding: 16px;
   float: left;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 .product-items {
@@ -214,6 +215,7 @@
 }
 
 .product-box {
+  border: 1px solid #e74c3c;
   border-radius: 10px;
   margin: 10px;
   width: 250px;
@@ -262,21 +264,22 @@
   background-color: #e74c3c;
 }
 .shopping-card {
+  border: 2px solid #e74c3c;
   margin-top: 120px;
   border-radius: 10px;
   width: 300px;
   height: auto;
-  background-color: rgb(245, 244, 244);
+  background-color: #545252;
 }
 
 .delivery-option {
-  background-color: green;
-  height: 130px;
+  background-color: rgb(255, 255, 255);
+  height: 160px;
   width: 100%;
 }
 
 .totaal {
-  background-color: rgb(245, 244, 244);
+  background-color: #545252;
   height: 50px;
   width: 100%;
   border-bottom-left-radius: 10px;
@@ -287,6 +290,14 @@
 
 .cart-total {
   margin-left: 175px;
+}
+
+.shopping-card h2 {
+  color: white;
+}
+
+.totaal span {
+  color: white;
 }
 
 .active {
@@ -419,8 +430,8 @@
 }
 
 .boxd {
-  margin-left: 20px;
-  margin-top: 5px;
+  margin-left: 15px;
+  margin-top: 10px;
 }
 
 .middlecontainer {
@@ -462,4 +473,85 @@
 
 .product-display .product-display-table a {
   width: 100px;
+}
+
+footer {
+  border-top: 5px solid #e74c3c;
+  width: 100%;
+  height: 130px;
+  background-color: #545252;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-middle {
+  width: 450px;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.footer-ul {
+  width: auto;
+  display: inline;
+  list-style: none;
+}
+
+.footer-ul a {
+  padding: 5px;
+  color: white;
+}
+
+.credits {
+  margin-left: 100px;
+  color: white;
+  margin-top: 40px;
+}
+
+.adminbox {
+  display: block;
+  width: 400px;
+  margin-left: 10px;
+}
+
+.product-name {
+  margin-top: 20px;
+  width: 65%;
+  height: 30px;
+  background-color: gainsboro;
+}
+
+.product-price {
+  margin-top: 10px;
+  width: 65%;
+  height: 30px;
+}
+
+.adminbox .product-image {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.submitbtn {
+  margin-top: 20px;
+  width: 150px;
+  height: 50px;
+  background-color: #db2068;
+  border-radius: 1px;
+}
+
+.middle-container2 .left .items {
+  width: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding-top: 100px;
+}
+
+.info-items {
+  width: 400px;
+  height: auto;
+  align-items: center;
 }

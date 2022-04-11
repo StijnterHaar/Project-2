@@ -13,21 +13,26 @@
 </head>
 
 <body>
-    <div class="top-header2">
+<div class="top-header2">
         <div class="catalog-nav">
-            <ul class="Login-list">
-                <a class="catolag-list-items" onclick="openForm()">Login</a>
-            </ul>
-            <ul class="catalog-list">
-                <a href=index.php class="catolag-list-items">Home</a>
-                <a href="cataloge.php" class="catolag-list-items">Pizza</a>
-                <a class="catolag-list-items">Specials</a>
-                <a href="info.php" class="catolag-list-items active" >Info</a>
-
-            </ul>
             <div class="logo">
                 <div class="p-header__logo"><img src="images/logo.png"></div>
             </div>
+            <ul class="catalog-list">
+                <a href=index.php class="catolag-list-items">Home</a>
+                <a href=cataloge.php class="catolag-list-items">Pizza</a>
+                <a class="catolag-list-items">Specials</a>
+                <a href=info.php class="catolag-list-items active" style="font-weight: bold;">Info</a>
+            </ul>
+            <ul class="Login-list">
+            <?php
+                include('validate.php'); // Includes Login Script
+                if(isset($_SESSION['login_user']))
+                echo "<a href='adminpage.php' style='color:white; padding-top: 15px; font-size: 15px;'>","Ingelogd als:  " . $_SESSION['login_user'] . "</a>";
+            else
+                echo '<a class="catolag-list-items" onclick="openForm()">Login</a>';
+                ?> 
+            </ul>
         </div>
     </div>
     <div class="form-popup" id="myForm">
@@ -52,25 +57,34 @@
     </div>
     <div class="middle-container2">
         <div class="left">
-        <div class="product-items">
-           <h1> Welkom bij onze website! </h1>
-
-            <a>Deze website is opgericht door aanleiding van een project op ROC nijmegen voor de opleiding software developer.</a>
-            <a>Hierbij zijn de volgende dingen aan gewerkt of nog in development :</a>
-            
-            <ul>
-                <li>Hoofd pagina : Finished</li>
-                <li>Hoofd pagina : Finished</li>
-                <li>Hoofd pagina : Finished</li>
-                <li>Hoofd pagina : Finished</li>
-            </ul>
-        </div>
+            <div class="items">
+            <h1> Welkom op onze website! </h1>
+                <div class="info-items">
+                    <a>Deze website is opgericht door aanleiding van een project op ROC nijmegen voor de opleiding software developer.</a>
+                    <a>Hierbij zijn de volgende dingen aan gewerkt of nog in development :</a>
+                </div>
+            <h1> Over Ons </h1>
+            <div class="info-items">
+                <a>Deze website is opgericht door aanleiding van een project op ROC nijmegen voor de opleiding software developer.</a>
+                <a>Hierbij zijn de volgende dingen aan gewerkt of nog in development :</a>
+            </div>
+            <h1 id="locatie"> Locatie </h1>
+                <div class="info-items">
+                    <a>Deze website is opgericht door aanleiding van een project op ROC nijmegen voor de opleiding software developer.</a>
+                    <a>Hierbij zijn de volgende dingen aan gewerkt of nog in development :</a>
+                </div>
+            <h1 id="contact"> Contact </h1>
+            <div class="info-items">
+                <a>Deze website is opgericht door aanleiding van een project op ROC nijmegen voor de opleiding software developer.</a>
+                <a>Hierbij zijn de volgende dingen aan gewerkt of nog in development :</a>
+            </div>
+            </div>
         </div>
         <div class="right">
             <div class="right-fixed">
                 <div class="shopping-card">
                     <h2 style="margin-top: 10px; margin-left: 10px;">Winkelmand</h2>
-                    <div class="delivery-option"></div>
+                    <div class="delivery-option">EMPTY</div>
                     <div class="totaal">
                         <span style="margin-left: 10px;">Totaal</span>
                         <span class="cart-total">0,00€</span>
@@ -83,5 +97,17 @@
     <script src="scripts/login.js"></script>
 
 </body>
+
+<footer>
+    <div class="footer-middle">
+        <ul class="footer-ul">
+            <a href="info.php#contact">Contact</a>
+            <a href="info.php">Info</li>
+            <a>Privacy policy</a>
+            <a>Algemene voorwaarden</a>
+        </ul>
+        <div class="credits">© 2022 Stijn ter Haar</div>
+    </div>
+</footer>
 
 </html>
