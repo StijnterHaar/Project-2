@@ -39,8 +39,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     style="background-color: #db2068; box-shadow: -0.55rem 0 0 #db2068, 3.35rem 0 0 #db2068; padding: .18em 0;"><a
                         style="color: white; margin-left: 5px;">Dashboard</a></i>
                 <i class="fa-solid fa-cart-flatbed"><a style="color: white; margin-left: 5px;">Products</a></i>
-
-                <i class="fa-solid fa-lock-open" style="margin-top: 400px;"><a style="color: white; margin-left: 5px;"
+                <i class="fa-solid fa-lock-open" style="margin-top: 350px;"><a style="color: white; margin-left: 5px;"
                         href="php/logout.php">logout</a></i>
             </div>
         </div>
@@ -94,7 +93,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                 <?php echo $product['price']; ?>/-
                             </td>
                             <td>
-                                <a href="admin_update.php?edit=<?php echo $product['id']; ?>" class="btn"> <i
+                                <a href="product_update.php?edit=<?php echo $product['id']; ?>" class="btn"> <i
                                         class="fas fa-edit"></i> bewerk </a>
                                 <a href="php/deletepage.php?delete=<?php echo $product['id']; ?>" class="btn"> <i
                                         class="fas fa-trash"></i> verwijder </a>

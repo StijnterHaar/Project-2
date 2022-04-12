@@ -76,7 +76,6 @@
                     <div class="display-name"><?php echo $product['name']; ?></div>
                     <div class="footer-box">
                         <div class="display-price">Vanaf <a style="font-weight: bold;"><?php echo $product['price']; ?> €</a></div>
-                        
                         <div class="display-button">+</div>
                     </div>
                 </div>

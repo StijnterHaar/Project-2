@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
       
     $adminname = test_input($_POST["adminname"]);
     $password = test_input($_POST["password"]);
-    $stmt = $connect->prepare("SELECT * FROM adminlogin WHERE adminname = :adminname");
+    $stmt = $connect->prepare("SELECT * FROM adminlogin WHERE adminname = :adminname AND function = 'admin'");
     $stmt->bindParam(':adminname', $adminname);
     $stmt->execute();
     $user = $stmt->fetch();
@@ -30,10 +30,11 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
     }
     else {
         $_SESSION['loggedin'] = false;
-        echo "<script language='javascript'>";
-        echo "alert('WRONG INFORMATION')";
-        echo "</script>";
-        die();
+        echo '<script type="text/javascript">'; 
+        echo 'alert("The information you used to login is false or you are not an admin!");'; 
+        echo 'window.location.href = "cataloge.php";';
+        echo '</script>';
+        exit();
     }
 }
   
