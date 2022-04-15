@@ -31,7 +31,7 @@
                             <?php
                 include('validate.php'); // Includes Login Script
                 if(isset($_SESSION['login_user']))
-                echo "<a href='adminpage.php' style='color:white; padding-top: 15px; font-size: 15px;'>","Ingelogd als:  " . $_SESSION['login_user'] . "</a>";
+                echo "<a href='adminpage.php' style='color:white; padding-top: 15px; font-size: 3vh;'>","Ingelogd als:  " . $_SESSION['login_user'] . "</a>";
             else
                 echo '<a class="catolag-list-items" onclick="openForm()">Login</a>';
                 ?> 
@@ -87,11 +87,11 @@
         <div class="right">
             <div class="right-fixed">
                 <div class="shopping-card">
-                    <h2 style="margin-top: 10px; margin-left: 10px;">Winkelmand</h2>
+                    <h2 style="margin-top: 10px; margin-left: 10px; font-size: 3vh;">Winkelmand</h2>
                     <div class="delivery-option"></div>
                     <div class="totaal">
-                        <span style="margin-left: 10px;">Totaal</span>
-                        <span class="cart-total">0,00€</span>
+                        <span style="margin-left: 10px; font-size: 3vh;">Totaal</span>
+                        <span class="cart-total" style="font-size: 3vh;">0,00€</span>
                     </div>
                 </div>
             </div>
