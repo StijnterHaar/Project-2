@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+<h2>Hello Admin</h2>
+=======
 <?php
 
 include 'includes/connect.php';
@@ -110,3 +113,4 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 </body>
 
 </html>
+>>>>>>> b2d18504bd59d5bc48b326354225818bca19b8bb
