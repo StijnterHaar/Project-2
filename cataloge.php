@@ -19,19 +19,22 @@
     <div class="top-header2">
         <div class="catalog-nav">
             <div class="logo">
-                <div class="p-header__logo"><img src="images/logo.png"></div>
+                <a href="dino.html"><div class="p-header__logo"><img src="images/logo.png" ></div></a>
             </div>
             <ul class="catalog-list">
                 <a href=index.php class="catolag-list-items">Home</a>
                 <a href=cataloge.php class="catolag-list-items active" style="font-weight: bold;">Pizza</a>
                 <a class="catolag-list-items">Specials</a>
                 <a href=info.php class="catolag-list-items">Info</a>
+                <form action="#" method="" class="search-form">
+                <input type="text" name="search" placeholder="Search..">
+                </form>
             </ul>
             <ul class="Login-list">
                             <?php
                 include('validate.php'); // Includes Login Script
                 if(isset($_SESSION['login_user']))
-                echo "<a href='adminpage.php' style='color:white; padding-top: 15px; font-size: 3vh;'>","Ingelogd als:  " . $_SESSION['login_user'] . "</a>";
+                echo "<a href='adminpage.php' style='color:white; padding-top: 15px; font-size: 15px;'>","Ingelogd als:  " . $_SESSION['login_user'] . "</a>";
             else
                 echo '<a class="catolag-list-items" onclick="openForm()">Login</a>';
                 ?> 
@@ -63,8 +66,15 @@
             <div class="product-items">
                 <?php 
                 @include 'includes/connect.php';
-                 $select = "SELECT * FROM products";
-                 $stmt = $connect->prepare($select);
+                if (isset($_GET['search'])) {
+                    $zoekvraag = '%'.$_GET['search'].'%';
+                    $select = "SELECT * FROM products WHERE name LIKE :zoekvraag";
+                    $stmt = $connect->prepare($select);
+                    $stmt->bindParam('zoekvraag', $zoekvraag);
+                } else {
+                    $select = "SELECT * FROM products";
+                    $stmt = $connect->prepare($select);
+                }
                  $stmt->execute();
                  $result = $stmt->fetchAll();
 
@@ -87,11 +97,11 @@
         <div class="right">
             <div class="right-fixed">
                 <div class="shopping-card">
-                    <h2 style="margin-top: 10px; margin-left: 10px; font-size: 3vh;">Winkelmand</h2>
+                    <h2 style="margin-top: 10px; margin-left: 10px; font-size: 20px;">Winkelmand</h2>
                     <div class="delivery-option"></div>
                     <div class="totaal">
-                        <span style="margin-left: 10px; font-size: 3vh;">Totaal</span>
-                        <span class="cart-total" style="font-size: 3vh;">0,00€</span>
+                        <span style="margin-left: 10px; font-size: 20px;">Totaal</span>
+                        <span class="cart-total" style="font-size: 20px;">0,00€</span>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ function test_input($data) {
     return $data;
 }
    
-if ($_SERVER["REQUEST_METHOD"]== "POST") {
+if (isset($_POST["adminname"])) {
       
     $adminname = test_input($_POST["adminname"]);
     $password = test_input($_POST["password"]);
@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
     
     if($user['adminname'] == $adminname && 
         $user['password'] == $password) {
-            header("Location: adminpage.php");
             $_SESSION['login_user']=$adminname; 
             $_SESSION['loggedin'] = true;
+            header("Location: adminpage.php");
             exit();
     }
     else {

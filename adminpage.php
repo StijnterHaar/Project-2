@@ -74,6 +74,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
    
    ?>
                 <div class="product-display">
+                    
                     <table class="product-display-table">
                         <thead>
                             <tr>
